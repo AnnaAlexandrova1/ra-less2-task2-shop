@@ -1,3 +1,5 @@
+https://annaalexandrova1.github.io/ra-less2-task2-shop/
+
 Расположение товаров
 ===
 
