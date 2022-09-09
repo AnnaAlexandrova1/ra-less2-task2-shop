@@ -1,19 +1,21 @@
+import './IconSwitch.css'
+
 const IconSwitch = (props) => {
     const { icon, onSwitch} = props;
 
 
     const renderBtn = (icon, onSwitch) => {
         return(
-            <button
-                    className={`btn-k ${icon}`}
+            <span
+                    className="material-icons"
                     onClick={() => {
                        
-                        onSwitch(icon)}}>
-            </button>
+                        onSwitch(icon)}}>{icon}
+            </span>
         )
     }  
     return(
-        <div>
+        <div className="icon-block">
             {renderBtn(icon, onSwitch)}
         </div>
             

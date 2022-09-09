@@ -2,6 +2,7 @@ import { Component } from 'react';
 
 import CardsView from '../CardsView/CardsView'
 import IconSwitch from '../IconSwitch/IconSwitch';
+import ListView from '../ListView/ListView';
 import productsList from '../productList'
 
 import './Store.css';
@@ -26,14 +27,28 @@ class Store extends Component {
         icon: 'view_module'})
     }
 }
+
+drowList = (icon) => {
+  if (icon === 'view_module') {
+    return(
+      <CardsView cards={this.products} />
+    )
+  }
+  if (icon === 'view_list') {
+    return (
+      <ListView cards={this.products} />
+    )
+  }
+}
  
   
   render(){
     const {icon} = this.state;
     return (
       <div className="store">
+        <span className="store-header">Домашнее задание "Расположение товаров"</span>
         <IconSwitch icon={icon} onSwitch={this.onSwitch}/>
-        <CardsView cards={this.products}/>
+        {this.drowList(icon)}
       </div>
     );
   }
